@@ -32,7 +32,7 @@ public class App
         if (state.equalsIgnoreCase(Wisconsin))
         {
             //calculate
-            double tax = amount * .055;
+            double tax = amount * taxRate;
             double total = amount + tax;
 
             //rounding to 2 decimal places
