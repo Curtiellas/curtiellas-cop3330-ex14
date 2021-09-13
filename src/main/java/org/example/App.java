@@ -13,28 +13,38 @@ public class App
     {
         Scanner sc = new Scanner(System.in);
 
-        final double taxRate = 0.055f;
+        final float taxRate = 0.055f;
         final String Wisconsin = "WI";
 
         System.out.println("What is the order amount? ");
         double amount = sc.nextDouble();
+        //float amount = Float.parseFloat(amountS);
 
         System.out.println("What is the state? ");
         String state = sc.next();
 
-        double total = amount;
+        //rounding to 2 decimal places
+        amount = Math.round(amount * 100.0) / 100.0;
 
-        if (state.compareTo(Wisconsin) == 0)
+        //saving the short output for when not Wisconsin
+        String output = "The total is $" + amount;
+
+        if (state.equalsIgnoreCase(Wisconsin))
         {
             //calculate
-            double tax = amount * taxRate;
-            total = amount + tax;
+            double tax = amount * .055;
+            double total = amount + tax;
+
+            //rounding to 2 decimal places
+
+            tax = Math.round(tax * 100.0) / 100.0;
+            total = Math.round(total * 100.0) / 100.0;
 
             //output
-            System.out.printf("The subtotal is $%.2f\nThe tax is $%.2f\n", amount, tax);
+            output = "The subtotal is $" + amount + "\nThe tax is $" + tax + "\nThe total is $" + total;
         }
 
         //output
-        System.out.printf("The total is $%.2f", total );
+        System.out.print(output);
     }
 }
