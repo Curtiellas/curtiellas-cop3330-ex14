@@ -16,11 +16,11 @@ public class App
         final float taxRate = 0.055f;
         final String Wisconsin = "WI";
 
-        System.out.println("What is the order amount? ");
+        System.out.print("What is the order amount? ");
         double amount = sc.nextDouble();
         //float amount = Float.parseFloat(amountS);
 
-        System.out.println("What is the state? ");
+        System.out.print("What is the state? ");
         String state = sc.next();
 
         //rounding to 2 decimal places
